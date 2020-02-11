@@ -4,11 +4,14 @@ import { AtualizacaoComponent} from '../admin/components/atualizacao/atualizacao
 import { CadastroComponent} from '../admin/components/cadastro/cadastro.component';
 import { ListagemComponent} from '../admin/components/listagem/listagem.component';
 import { AdminComponent} from '../admin/components/admin.component';
+import { AdminGuard} from '../admin/services/admin-guard.service';
 
 export const AdminRoutes: Routes = [
 	{
 		path: 'admin',
 		component: AdminComponent,
+		//isso diz ao adminRoutes que o acesso a essas rotas são restrito somente ao admin
+		canActivate:[AdminGuard],
 		children: [
 		  {
 			path: '', 

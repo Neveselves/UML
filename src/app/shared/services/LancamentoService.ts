@@ -29,4 +29,26 @@ export class LancamentoService {
       '&ord=' + ordem + '&dir=' + direcao;
     return this.http.get(url + params, this.httpUtil.headers());
   }
+
+  remover(lancamentoId: string): Observable<any>{
+    return this.http.delete(
+      env.baseUrlApi + this.PATH + '/' + lancamentoId,
+      this.httpUtil.headers()
+    )
+  }
+
+  buscarPorId(lancamentoId: string): Observable<any> {
+    return this.http.get(
+        env.baseUrlApi + this.PATH + '/' + lancamentoId,
+        this.httpUtil.headers()
+    );
+  }
+
+  atualizar(lancamento: Lancamento): Observable<any> {
+    return this.http.put(
+        env.baseUrlApi + this.PATH + '/' + lancamento.id, 
+        lancamento,
+        this.httpUtil.headers()
+    );
+  }
 }

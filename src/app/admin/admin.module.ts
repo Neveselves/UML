@@ -20,17 +20,14 @@ import {
   MatPaginatorIntl,
   MatSortModule
 } from '@angular/material';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { SharedModule } from '../shared/shared.module';
-
 import { HttpUtilService } from '../shared/services/http-util.service';
 import { PtBrMatPaginatorIntl} from '../shared/pt-br-mat-paginator-intl';
 import { LancamentoService} from '../shared/services/LancamentoService';
-import { FuncionarioService} from '../shared/services/funcionario.service'
-
-import { 	ListagemComponent } from '../admin/components/listagem/listagem.component';
+import { FuncionarioService} from '../shared/services/funcionario.service';
+import { AdminGuard} from '../admin/services/admin-guard.service';
+import { 	ListagemComponent, ConfirmarDialog } from '../admin/components/listagem/listagem.component';
 import { 	CadastroComponent } from '../admin/components/cadastro/cadastro.component';
 import { 	AtualizacaoComponent } from '../admin/components/atualizacao/atualizacao.component';
 import { 	AdminComponent } from '../admin/components/admin.component';
@@ -66,11 +63,13 @@ import { 	AdminComponent } from '../admin/components/admin.component';
   providers: [
     LancamentoService,
     FuncionarioService,
+    AdminGuard,
     HttpUtilService,
     MatPaginatorIntl,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl }
   ],
+  entryComponents:[ConfirmarDialog]
 })
 export class AdminModule { }
 
