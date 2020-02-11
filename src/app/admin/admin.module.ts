@@ -28,6 +28,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HttpUtilService } from '../shared/services/http-util.service';
 import { PtBrMatPaginatorIntl} from '../shared/pt-br-mat-paginator-intl';
 import { LancamentoService} from '../shared/services/LancamentoService';
+import { FuncionarioService} from '../shared/services/funcionario.service'
 
 import { 	ListagemComponent } from '../admin/components/listagem/listagem.component';
 import { 	CadastroComponent } from '../admin/components/cadastro/cadastro.component';
@@ -64,6 +65,7 @@ import { 	AdminComponent } from '../admin/components/admin.component';
   ],
   providers: [
     LancamentoService,
+    FuncionarioService,
     HttpUtilService,
     MatPaginatorIntl,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
