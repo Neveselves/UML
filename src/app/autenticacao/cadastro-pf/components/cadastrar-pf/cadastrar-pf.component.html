@@ -41,34 +41,7 @@
         &nbsp;
         <a mat-raised-button routerLink="/login">Voltar</a>
       </mat-list-item>
-    </mat-list>
-
-    <div id="animacao">
-
-        <p>olá estou animado </p>
-      
-       </div>
-
-  
-    <mat-form-field>
-      <mat-label>Toppings</mat-label>
-      <mat-select  formControlName="toppings" multiple>        
-        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-list-item fxLayoutAlign="center">
-      <button id="button" mat-raised-button color="primary"
-          >
-          Cadastrar
-      </button>
-      &nbsp;
-      <a mat-raised-button routerLink="/login">Voltar</a>
-    </mat-list-item>
- 
-    
-    <!-- (click)="limpar()" -->
-
+    </mat-list>   
   </form>
   
   

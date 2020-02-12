@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSnackBar, PageEvent,MatPaginator,Sort,MatSort} from '@angular/material';
 import { Lancamento } from 'src/app/shared/models/lancamento.model';
-import { LancamentoService } from 'src/app/shared/services/lancamento.service';
+import { LancamentoService } from '../../../shared/services/LancamentoService';
 
 @Component({
   selector: 'app-listagem',
@@ -22,7 +22,7 @@ export class ListagemComponent implements OnInit {
              ) { }
 
   ngOnInit() {
-    this.lancamentoService.listaTodosLancamentos()
+    this.lancamentoService.listarTodosLancamentos()
       .subscribe(
         data => {
           const lancamentos = data['data'] as Lancamento[];

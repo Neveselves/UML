@@ -58,7 +58,8 @@ import { 	AdminComponent } from '../admin/components/admin.component';
   	ListagemComponent, 
   	CadastroComponent, 
   	AtualizacaoComponent,
-    AdminComponent
+    AdminComponent,
+    ConfirmarDialog
   ],
   providers: [
     LancamentoService,
